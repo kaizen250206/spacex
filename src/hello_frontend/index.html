@@ -1,17 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>IC Hello Starter</title>
-  <base href="/" />
-  <link rel="icon" href="/favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SpaceX - Explore the Stars</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #0b0c10;
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 5rem;
+      color: #1abc9c;
+      text-align: center;
+      margin-bottom: 30px;
+      letter-spacing: 10px;
+      animation: neonPulse 1.5s ease-in-out infinite alternate;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      color: #ff6f61;
+      margin-bottom: 50px;
+      animation: fadeInUp 3s ease-in-out infinite alternate;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+    }
+
+    .button {
+      padding: 20px 40px;
+      background: #1abc9c;
+      color: #fff;
+      font-size: 1.5rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(26, 188, 156, 0.5);
+      transition: all 0.3s ease;
+      margin-top: 30px;
+    }
+
+    .button:hover {
+      background: #16a085;
+      box-shadow: 0 10px 30px rgba(26, 188, 156, 0.7);
+      transform: scale(1.1);
+    }
+
+    .rocket {
+      width: 100px;
+      height: 250px;
+      background: linear-gradient(45deg, #f39c12, #e74c3c);
+      position: relative;
+      border-radius: 20px;
+      margin: 50px auto;
+      animation: rocketLaunch 6s ease-in-out infinite alternate;
+    }
+
+    .rocket::before {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 35%;
+      width: 30%;
+      height: 20px;
+      background: #e74c3c;
+      border-radius: 10px;
+    }
+
+    .rocket::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      width: 50%;
+      height: 8px;
+      background: #34495e;
+      border-radius: 3px;
+    }
+
+    @keyframes neonPulse {
+      0% {
+        text-shadow: 0 0 20px #1abc9c, 0 0 30px #1abc9c, 0 0 40px #1abc9c;
+      }
+      50% {
+        text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
+      }
+      100% {
+        text-shadow: 0 0 20px #f39c12, 0 0 30px #f39c12, 0 0 40px #f39c12;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes rocketLaunch {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-150vh);
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+  <div class="container">
+    <h1>SpaceX</h1>
+    <h2>Reaching New Frontiers</h2>
+    
+    <div class="rocket"></div>
 
+    <button class="button" onclick="window.location.href='https://www.spacex.com'">Explore More</button>
+  </div>
+</body>
 </html>
